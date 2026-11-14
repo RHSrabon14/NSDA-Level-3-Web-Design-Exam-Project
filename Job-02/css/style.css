@@ -1,0 +1,89 @@
+/* Pause animation when mouse hovers over it */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves half the width (since we duplicated images) */
+}
+/* --- Circular Attractive Carousel --- */
+.circular-carousel {
+    width: 350px; /* Perfect size for desktop */
+    height: 350px;
+    border-radius: 50%; /* Makes it a circle */
+    border: 8px solid #ffffff; /* White frame around the circle */
+    position: relative;
+    /* Adding a beautiful green glow/shadow */
+    box-shadow: 0 0 25px rgba(46, 125, 50, 0.4), inset 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden; /* Keeps images inside the circle */
+}
+
+/* Force images to fit perfectly inside the circle */
+.circular-carousel .carousel-inner,
+.circular-carousel .carousel-item {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circular-carousel img {
+    object-fit: cover; /* Crops images perfectly without stretching */
+    object-position: center;
+}
+
+/* Mobile Responsiveness: Make it slightly smaller on phones */
+@media (max-width: 576px) {
+    .circular-carousel {
+        width: 250px;
+        height: 250px;
+    }
+}
+/* Custom CSS for the Unordered List (Requirement 5) */
+.custom-team-list {
+    list-style-type: none; /* No list style */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.custom-team-list li {
+    background-color: #e8f5e9; /* Background color */
+    border: 2px solid #2e7d32; /* Border */
+    border-radius: 15px; /* Radius */
+    padding: 15px 25px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+    cursor: pointer;
+}
+
+/* Hover effect */
+.custom-team-list li:hover {
+    background-color: #2e7d32; /* Changes to dark green */
+    color: white;
+    transform: translateY(-5px); /* Lifts up slightly */
+}
+/* Marquee Slider CSS */
+.marquee-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    animation: scrollMarquee 15s linear infinite;
+}
+
+.marquee-content img {
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+

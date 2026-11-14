@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstera Deliciosa - Blooming Oasis</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER / NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid px-4">
+           <a class="navbar-brand fw-bold text-success d-flex align-items-center gap-2" href="index.html">
+    <img src="images/logo.png" alt="Logo" style="height: 40px; width: auto;">
+    Blooming Oasis
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="product.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN PRODUCT CONTENT -->
+    <main class="container my-5 flex-grow-1">
+        <div class="row">
+            
+            <!-- LEFT SIDE: Video and Details -->
+            <div class="col-lg-7 mb-4">
+                <h1 class="fw-bold text-success mb-3">Monstera Deliciosa</h1>
+                
+                <!-- Video Requirement (Requirement 1.b.i) -->
+                <div class="ratio ratio-16x9 mb-4 shadow rounded overflow-hidden">
+                    <!-- Using a sample open-source video for the exam -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1" title="Monstera Growth Video" allowfullscreen></iframe>
+                </div>
+
+                <!-- Plant Details (Requirement 1.b.ii) -->
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-success">Plant Details</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Size options:</strong> 4-inch, 6-inch, 10-inch pots</li>
+                            <li class="list-group-item"><strong>Light:</strong> Bright, indirect light</li>
+                            <li class="list-group-item"><strong>Watering:</strong> Water every 1-2 weeks, allowing soil to dry out</li>
+                            <li class="list-group-item"><strong>Toxicity:</strong>  Toxic to pets and humans if ingested</li>
+                            <li class="list-group-item"><strong>Repotting:</strong> Repot every 2 years or when root-bound</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Add to Cart & Parent Tips -->
+            <div class="col-lg-5">
+                
+                <!-- Add to Cart (Requirement 1.b.iv) -->
+                <div class="card shadow border-success mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-success fw-bold">Purchase Options</h4>
+                        <p class="text-muted">Select your add-ons</p>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">1. Choose Plant Pot:</label>
+                            <select class="form-select" id="potOption">
+                                <option value="0">Standard Plastic Pot (+$0)</option>
+                                <option value="15">Ceramic White Pot (+$15)</option>
+                                <option value="20">Terracotta Pot (+$20)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">2. Choose Plant Stand:</label>
+                            <select class="form-select" id="standOption">
+                                <option value="0">No Stand (+$0)</option>
+                                <option value="25">Wooden Stand (+$25)</option>
+                                <option value="35">Metal Stand (+$35)</option>
+                            </select>
+                        </div>
+
+                        <h5 class="mt-4">Total: $<span id="totalPrice">45</span>.00</h5>
+                        <button class="btn btn-success w-100 mt-2" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Plant Parent Tips (Requirement 1.b.iii) -->
+                <div class="card shadow-sm border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-success fw-bold">Plant Parent Tips</h5>
+                        <p class="small text-muted">Share your Monstera care experiences below!</p>
+                        <form id="tipsForm">
+                            <div class="mb-2">
+                                <input type="text" class="form-control" id="parentName" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-2">
+                                <textarea class="form-control" id="parentTip" rows="3" placeholder="Your care tip..." required></textarea>
+                            </div>
+                            <button type="button" class="btn btn-outline-success btn-sm" onclick="submitTip()">Post Tip</button>
+                        </form>
+                        <div id="tipList" class="mt-3">
+                            <!-- Submitted tips will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 Blooming Oasis. All rights reserved.</p>
+            <p id="datetime" class="mb-2 text-warning fw-bold"></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
