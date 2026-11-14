@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Blooming Oasis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold text-success d-flex align-items-center gap-2" href="index.html">
+    <img src="images/logo.png" alt="Logo" style="height: 40px; width: auto;">
+    Blooming Oasis
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container my-5 flex-grow-1">
+        <h1 class="text-center fw-bold text-success mb-4">Get in Touch</h1>
+        
+        <div class="row mt-5">
+            <!-- Left: Live Chat & Email -->
+            <div class="col-md-5 mb-4">
+                <div class="card bg-success text-white border-0 shadow p-4 mb-4">
+                    <h3> Live Chat</h3>
+                    <p>Need real-time plant care advice? Our Plant Specialist is online.</p>
+                    <button class="btn btn-light text-success fw-bold" onclick="startChat()">Chat with a Specialist</button>
+                </div>
+                
+                <div class="card border-0 shadow-sm p-4">
+                    <h4 class="text-success"> Email Us</h4>
+                    <p class="mb-1">General Inquiries:</p>
+                    <a href="mailto:hello@bloomingoasis.com" class="text-decoration-none fw-bold">hello@bloomingoasis.com</a>
+                </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="col-md-7">
+                <div class="card border-0 shadow-sm p-4">
+                    <h3 class="text-success mb-3">Send a Message</h3>
+                    <!-- Form with JS Confirmation Popup -->
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="cName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="cEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" id="cMessage" rows="4" required></textarea>
+                        </div>
+                        <!-- Using type="button" to trigger JS instead of page reload -->
+                        <button type="button" class="btn btn-success px-5" onclick="submitContactForm()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 Blooming Oasis. All rights reserved.</p>
+            <p id="datetime" class="mb-2 text-warning fw-bold"></p>
+            <p class="small mb-0">Follow us on <a href="https://www.instagram.com" target="_blank" class="text-success text-decoration-none fw-bold">Instagram</a> for plant care tips!</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
